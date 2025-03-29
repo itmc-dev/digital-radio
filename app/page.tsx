@@ -9,6 +9,7 @@ import {
   Users,
   AudioWaveformIcon as Waveform,
 } from "lucide-react"
+import Image from 'next/image'
 
 import { Button } from "@/components/ui/button"
 
@@ -19,7 +20,13 @@ export default function Home() {
       <header className="sticky top-0 z-10 bg-white border-b">
         <div className="container flex items-center justify-between h-16 px-4 mx-auto md:px-6">
           <Link href="/" className="flex items-center gap-2 text-xl font-bold">
-            <Radio className="w-6 h-6 text-primary" />
+            <Image
+              src="/images/logo.png"
+              alt="Digital Radio Logo"
+              width={5}
+              height={5}
+              className="w-auto h-auto"
+            />
             <span>Digital Radio</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
@@ -564,77 +571,100 @@ export default function Home() {
             </div>
             <div className="space-y-4">
               <div className="grid gap-4">
-                <div className="grid grid-cols-2 gap-4">
+                <form 
+                  action="https://formsubmit.co/jedg2402@gmail.com" 
+                  method="POST"
+                  className="grid gap-4"
+                >
+                  {/* FormSubmit Configuration */}
+                  <input type="hidden" name="_subject" value="Nuevo contacto de Digital Radio" />
+                  <input type="text" name="_honey" style={{ display: 'none' }} />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_next" value="/thanks" />
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="first-name"
+                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      >
+                        Nombre
+                      </label>
+                      <input
+                        id="first-name"
+                        name="Nombre"
+                        required
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        placeholder="Ingrese su nombre"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="last-name"
+                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      >
+                        Apellido
+                      </label>
+                      <input
+                        id="last-name"
+                        name="Apellido"
+                        required
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        placeholder="Ingrese su apellido"
+                      />
+                    </div>
+                  </div>
                   <div className="space-y-2">
                     <label
-                      htmlFor="first-name"
+                      htmlFor="email"
                       className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
-                      Nombre
+                      Email
                     </label>
                     <input
-                      id="first-name"
+                      id="email"
+                      name="Email"
+                      type="email"
+                      required
                       className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      placeholder="Ingrese su nombre"
+                      placeholder="Ingrese su email"
                     />
                   </div>
                   <div className="space-y-2">
                     <label
-                      htmlFor="last-name"
+                      htmlFor="station-name"
                       className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
-                      Apellido
+                      Nombre de la Estación
                     </label>
                     <input
-                      id="last-name"
+                      id="station-name"
+                      name="Estacion"
+                      required
                       className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      placeholder="Ingrese su apellido"
+                      placeholder="Nombre de su estación de radio"
                     />
                   </div>
-                </div>
-                <div className="space-y-2">
-                  <label
-                    htmlFor="email"
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                    placeholder="Ingrese su email"
-                    type="email"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label
-                    htmlFor="station-name"
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    Nombre de la Estación
-                  </label>
-                  <input
-                    id="station-name"
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                    placeholder="Nombre de su estación de radio"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label
-                    htmlFor="message"
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    Mensaje
-                  </label>
-                  <textarea
-                    id="message"
-                    className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                    placeholder="Describa sus necesidades y responda a las preguntas del cuestionario"
-                  ></textarea>
-                </div>
-                <Button type="submit" size="lg">
-                  Enviar Mensaje
-                </Button>
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="message"
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      Mensaje
+                    </label>
+                    <textarea
+                      id="message"
+                      name="Mensaje"
+                      required
+                      className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                      placeholder="Describa sus necesidades y responda a las preguntas del cuestionario"
+                    ></textarea>
+                  </div>
+                  <Button type="submit" size="lg">
+                    Enviar Mensaje
+                  </Button>
+                </form>
               </div>
             </div>
           </div>
@@ -647,7 +677,13 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-xl font-bold">
-                <Radio className="w-6 h-6 text-primary" />
+                <Image
+                  src="/images/logo.png"
+                  alt="Digital Radio Logo"
+                  width={30}
+                  height={30}
+                  className="w-auto h-auto"
+                />
                 <span>Digital Radio</span>
               </div>
               <p className="text-gray-400">
@@ -723,7 +759,7 @@ export default function Home() {
                   >
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                   </svg>
-                  <span className="text-gray-400">+507 123 4567</span>
+                  <span className="text-gray-400">+507 6324-7541</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
@@ -741,7 +777,7 @@ export default function Home() {
                     <rect width="20" height="16" x="2" y="4" rx="2" />
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                   </svg>
-                  <span className="text-gray-400">info@digitalradio.com</span>
+                  <span className="text-gray-400">jedg2402@gmail.com</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <svg

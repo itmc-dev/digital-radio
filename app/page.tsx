@@ -78,7 +78,7 @@ export default function Home() {
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                  Eleve la Audiencia de su Estación de Radio
+                El impulso que su estación necesita para alcanzar el éxito de su audiencia.
                 </h1>
                 <p className="max-w-[600px] text-gray-500 md:text-xl">
                   Somos un grupo de profesionales con 30 años de experiencia creando complementos auditivos que
@@ -99,11 +99,18 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center">
               <div className="relative w-full h-64 md:h-96">
-                <Waveform className="w-full h-full text-primary/50" strokeWidth={0.5} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-white rounded-full p-6 shadow-lg">
-                    <Radio className="w-12 h-12 text-primary" />
-                  </div>
+                <div className="w-full h-full">
+                  <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/6LRbNgTzH0M?si=U4F2WeGx6RSbqSVV" 
+                    title="YouTube video player" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerPolicy="strict-origin-when-cross-origin" 
+                    allowFullScreen
+                    className="rounded-lg shadow-lg"
+                  ></iframe>
                 </div>
               </div>
             </div>
@@ -523,7 +530,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-12 text-center">
-            <p className="text-xl font-bold">No Es Para Asustarse</p>
+            <p className="text-xl font-bold">Eleve la Audiencia de su Estación de Radio</p>
             <p className="mt-2 text-gray-500 max-w-2xl mx-auto">
               Nuestros precios y paquetes están ideados para que usted pueda trabajar con nosotros. Somos creyentes de
               superar retos con el menor esfuerzo necesario, y aunque dominamos muchos lenguajes, ideas, y conceptos la
@@ -757,7 +764,7 @@ export default function Home() {
                     strokeLinejoin="round"
                     className="h-4 w-4"
                   >
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                   </svg>
                   <span className="text-gray-400">+507 6324-7541</span>
                 </li>
@@ -802,6 +809,9 @@ export default function Home() {
           </div>
           <div className="mt-12 border-t border-gray-800 pt-8 text-center text-gray-400">
             <p>© {new Date().getFullYear()} Digital Radio. Todos los derechos reservados.</p>
+            <p className="mt-2 text-sm">
+              Powered by <a href="https://itmc.cloud/" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">ITMC</a>
+            </p>
           </div>
         </div>
       </footer>
